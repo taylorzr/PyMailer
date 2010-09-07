@@ -4,14 +4,14 @@ Usage:
 from smtplib import SMTP
 smtp = SMTP('smtp.gmail.com:587')
 smtp.starttls()
-smtp.login('username', 'password')
+smtp.login('username', 'password')      # enter your username and password
 
 # Prepare email
-from mailer import Email
+from pymailer import Email
 email = Email()
 email.server = smtp
 email.recipients = ['taylorzr@gmail.com']
-email.subject = 'Mailer Test'				# optional
-email.text = 'Sent using python mailer module!'		# optional
-email.attach(['mailer.py'])				# optional
+email.subject = 'pymailer test'				# optional
+email.text = 'Sent using python pymailer module!'	# optional
+email.attach(['README'])				# optional
 email.send()
