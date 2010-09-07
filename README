@@ -1,0 +1,17 @@
+Usage:
+
+# Setup smtp server
+from smtplib import SMTP
+smtp = SMTP('smtp.gmail.com:587')
+smtp.starttls()
+smtp.login('username', 'password')
+
+# Prepare email
+from mailer import Email
+email = Email()
+email.server = smtp
+email.recipients = ['taylorzr@gmail.com']
+email.subject = 'Mailer Test'				# optional
+email.text = 'Sent using python mailer module!'		# optional
+email.attach(['mailer.py'])				# optional
+email.send()
